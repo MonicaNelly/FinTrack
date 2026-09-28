@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTrack - Personal Finance Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+
+        <h2>FinTrack</h2>
+
+        <nav>
+            <a href="#" class="active">Dashboard</a>
+            <a href="#">Income</a>
+            <a href="#">Expenses</a>
+            <a href="#">Budgets</a>
+            <a href="#">Savings</a>
+            <a href="#">Transactions</a>
+            <a href="#">Reports</a>
+            <a href="#">Settings</a>
+        </nav>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <h1>Dashboard</h1>
+            <p>Welcome to FinTrack</p>
+        </header>
+
+
+        <!-- Financial Summary Cards -->
+        <section class="summary-cards">
+
+            <div class="card">
+                <h3>Total Income</h3>
+                <p id="totalIncome">R0.00</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Expenses</h3>
+                <p id="totalExpenses">R0.00</p>
+            </div>
+
+            <div class="card">
+                <h3>Current Balance</h3>
+                <p id="currentBalance">R0.00</p>
+            </div>
+
+            <div class="card">
+                <h3>Monthly Budget</h3>
+                <p id="monthlyBudget">R0.00</p>
+            </div>
+
+        </section>
+<section class="transactions">
+
+    <h2>Set Monthly Budget</h2>
+
+
+    <form id="budgetForm">
+
+        <label for="budgetAmount">Monthly Budget</label>
+
+        <input
+            type="number"
+            id="budgetAmount"
+            placeholder="Enter monthly budget"
+            min="0"
+            step="0.01"
+            required
+        >
+
+        <button type="submit">Set Budget</button>
+
+    </form>
+
+</section>
+<section class="transactions">
+
+    <h2>Budget Progress</h2>
+
+    <p id="budgetProgressText">No budget set yet.</p>
+    <p><strong>Savings Progress</strong></p>
+    <div class="progress-container">
+        <div id="budgetProgressBar" class="progress-bar"></div>
+    </div>
+
+</section>
+<!-- Add Income -->
+<section class="transactions">
+
+    <h2>Add Income</h2>
+    <label for="incomeDescription">Income Description</label>
+
+<input
+    type="text"
+    id="incomeDescription"
+    placeholder="e.g. Salary"
+    required
+>
+    <form id="incomeForm">
+
+        <label for="incomeAmount">Income Amount</label>
+
+        <input
+            type="number"
+            id="incomeAmount"
+            placeholder="Enter amount"
+            min="0"
+            step="0.01"
+            required
+        >
+
+        <button type="submit">Add Income</button>
+
+    </form>
+
+</section>
+      <!-- Add Expense -->
+<section class="transactions">
+
+    <h2>Add Expense</h2>
+
+    <form id="expenseForm">
+        <label for="expenseDescription">Expense Description</label>
+
+<input
+    type="text"
+    id="expenseDescription"
+    placeholder="e.g. Groceries"
+    required
+>
+        <label for="expenseAmount">Expense Amount</label>
+
+        <input
+            type="number"
+            id="expenseAmount"
+            placeholder="Enter amount"
+            min="0"
+            step="0.01"
+            required
+        >
+        <label for="expenseCategory">Expense Category</label>
+
+<select id="expenseCategory" required>
+    <option value="">Select category</option>
+    <option value="Food">Food</option>
+    <option value="Transport">Transport</option>
+    <option value="Rent">Rent</option>
+    <option value="Utilities">Utilities</option>
+    <option value="Entertainment">Entertainment</option>
+    <option value="Other">Other</option>
+</select>
+        <button type="submit">Add Expense</button>
+
+    </form>
+
+</section>  <!-- Recent Transactions -->
+<!-- Savings Goal -->
+
+<section class="transactions">
+
+    <h2>Savings Goal</h2>
+
+    <form id="savingsForm">
+
+        <label for="savingsGoalName">Goal Name</label>
+
+        <input
+            type="text"
+            id="savingsGoalName"
+            placeholder="e.g. New Laptop"
+            required
+        >
+
+        <label for="savingsTarget">Savings Target</label>
+
+        <input
+            type="number"
+            id="savingsTarget"
+            placeholder="Enter target amount"
+            min="0"
+            step="0.01"
+            required
+        >
+        <label for="amountSaved">Amount Saved</label>
+
+<input
+    type="number"
+    id="amountSaved"
+    placeholder="Enter amount saved"
+    min="0"
+    step="0.01"
+    required
+>
+
+        <button type="submit">Set Savings Goal</button>
+
+    </form>
+
+    <div id="savingsGoalDisplay"></div>
+
+<div class="progress-container">
+    <div id="savingsProgressBar" class="progress-bar"></div>
+</div>
+
+</section>
+        <section class="transactions">
+
+            <h2>Recent Transactions</h2>
+
+            <div id="transactionList"></div>
+
+        </section>
+
+    </main>
+<script src="js/app.js"></script>
+</body>
+
+</html>
+
